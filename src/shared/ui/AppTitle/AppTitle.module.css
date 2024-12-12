@@ -1,0 +1,11 @@
+.box {
+    padding-bottom: 7px;
+    border-bottom: 1px solid var(--border-color);
+    width: 100%;
+}
+
+.title {
+    font-weight: 400;
+    color: var(--white);
+    font-size: 35px;
+}
