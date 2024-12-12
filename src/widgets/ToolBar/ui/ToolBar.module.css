@@ -1,0 +1,89 @@
+.aside {
+    background: linear-gradient(180deg, var(--blue-transparent), var(--background)) calc(334px * .33), transparent calc(334px *.88);
+    padding: 20px 10px;
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    transform-origin: 0 0;
+    transition: 0.5s ease;
+    min-height: 600px;
+    height: 100vh;
+    overflow: hidden;
+    width: 300px;
+    white-space: nowrap;
+}
+
+.headerBox {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 0 0 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.closeBox {
+    justify-content: center;
+    padding: 0;
+    padding-bottom: 10px; 
+}
+
+.title {
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+.icon {
+    color: var(--white);
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    min-height: 30px;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.boxUser {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 10px;
+    transition: 0.2s;
+    margin-top: auto;
+    
+    &:hover {
+        background-color: var(--white-transparent);
+    }
+}
+
+.closeBoxUser {
+    justify-content: center;
+}
+
+.colorBox {
+    color: var(--white);
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    min-height: 30px;
+    background-color: rgba(255, 255, 255, 0.437);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 6px;
+    font-size: 17px;
+}
+
+.text {
+    font-weight: 400;
+    color: var(--white);
+    font-size: 18px;
+}

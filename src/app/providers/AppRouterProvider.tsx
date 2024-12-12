@@ -3,7 +3,7 @@ import { unAuthRouter } from "@app/router/unAuthRoutes"
 import { RouterProvider } from "react-router-dom"
 
 const AppRouterProvider = () => {
-    const isAuth = false
+    const isAuth = true
     const currentRouter = isAuth ? router : unAuthRouter
 
     return (
