@@ -8,7 +8,7 @@ type IMenuElementAction = {
 }
 
 type IMenuElementPath = {
-    path: EnumRoutes,
+    path: EnumRoutes | string,
     action?: undefined
 }
 

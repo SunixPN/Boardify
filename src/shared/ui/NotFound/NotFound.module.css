@@ -1,0 +1,59 @@
+.not-found {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 115px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: -30px -20px -30px 0;
+    padding: 40px 0;
+    min-height: 500px;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 150px;
+    color: var(--white);
+    line-height: inherit;
+}
+
+.textSub {
+    font-weight: 600;
+    font-size: 30px;
+    color: var(--white);
+}
+
+.text {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.link {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 500px) {
+    .title {
+        font-size: 120px;
+    }
+
+    .textSub {
+        font-size: 20px;
+    }
+
+    .text {
+        font-size: 15px;
+    }
+
+    .not-found {
+        padding: 20px 0;
+        min-height: 400px;
+    }
+}

@@ -11,6 +11,7 @@ export const theme = createTheme({
             main: "#4b71d6",
             contrastText: "#fff"
         },
+        divider: "rgba(255, 255, 255, 0.098)"
     },
     typography: {
         fontFamily: "Yandex Sans",
@@ -22,6 +23,21 @@ export const theme = createTheme({
                 notchedOutline: {
                     borderColor: "rgba(255, 255, 255, .488)",
                 },
+            }
+        },
+        MuiIconButton: {
+            styleOverrides: {
+                colorPrimary: "#fff",
+                colorSecondary: "#fff",
+                colorInherit: "#fff",
+                edgeEnd: {
+                    ":active": {
+                        backgroundColor: "rgba(255, 255, 255, 0.078)"
+                    },
+                    ":hover": {
+                        backgroundColor: "rgba(255, 255, 255, 0.078)"
+                    },
+                }
             }
         },
         MuiButton: {
@@ -37,5 +53,13 @@ export const theme = createTheme({
                 }
             ]
         },
+
+        MuiTab: {
+            styleOverrides: {
+                root: {
+                    color: "#fff"
+                }
+            }
+        }
     }
 })

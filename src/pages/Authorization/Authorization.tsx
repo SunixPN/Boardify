@@ -1,6 +1,6 @@
-import { useAuthStore } from "@features/Authorization/store/authStore"
-import LoginForm from "@features/Authorization/ui/LoginForm/LoginForm"
-import RegisterForm from "@features/Authorization/ui/RegisterForm/RegisterForm"
+import { useAuthStore } from "@entities/Authorization/store/authStore"
+import LoginForm from "@entities/Authorization/ui/LoginForm/LoginForm"
+import RegisterForm from "@entities/Authorization/ui/RegisterForm/RegisterForm"
 
 const Authorization = () => {   
     const isRegister = useAuthStore(state => state.isRegister)
