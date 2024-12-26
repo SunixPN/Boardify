@@ -10,11 +10,13 @@
     height: 100vh;
     overflow: hidden;
     width: 300px;
+    flex: 0 0 300px;
     white-space: nowrap;
 }
 
 .asideClose {
     width: 80px;
+    flex: 0 0 80px;
 }
 
 .headerBox {
@@ -126,6 +128,7 @@
     }
     
     .aside {
+        flex: 0 1 auto;
         position: absolute;
         width: 100%;
         left: 0;

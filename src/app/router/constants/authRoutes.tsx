@@ -1,5 +1,5 @@
 import RootLayout from "@app/layouts/RootLayout/RootLayout";
-import Home from "@pages/Home/Home";
+import Home from "@pages/Home/ui/Home";
 import { EnumRoutes } from "@shared/enums/EnumRoutes";
 import NotFound from "@shared/ui/NotFound/NotFound";
 import { Navigate } from "react-router-dom";

@@ -1,0 +1,38 @@
+.field {
+    background-color: var(--background-secondary);
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: 0.3s height ease;
+    position: relative;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.title {
+    font-weight: 400;
+    color: var(--white);
+    font-size: 18px;
+
+    span {
+        color: var(--text-secondary);
+        margin-left: 10px;
+    }
+}
+
+.tasksBox {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.icon {
+    color: var(--white);
+}
