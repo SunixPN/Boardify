@@ -6,7 +6,7 @@ import { Plus } from "lucide-react"
 import TaskField from "./TaskField/TaskField"
 import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable"
 import { sortTasks } from "../model/sortTasks"
-import DropField from "./DropField/DropField"
+// import DropField from "./DropField/DropField"
 
 interface IKanBanFieldProps {
     status: EnumKanbanStatus,
@@ -30,24 +30,21 @@ const KanBanField = ({
             items={sortableTasksId}
             strategy={verticalListSortingStrategy}
         >
-
-            <DropField status={status}>
-                <article style={{ height: calculateHeight() }} className={styles.field} >
-                    <div className={styles.head}>
-                        <h3 className={styles.title}>{status} <span>{tasks.length}</span></h3>
-                        <ButtonWrapper>
-                            <Plus className={styles.icon} />
-                        </ButtonWrapper>
-                    </div>
-                    <div className={styles.tasksBox}>
-                        {
-                            sortableTasks.map(task => (
-                                <TaskField key={task.id} task={task} />
-                            ))
-                        }
-                    </div>
-                </article>
-            </DropField>
+            <article style={{ height: calculateHeight() }} className={styles.field} >
+                <div className={styles.head}>
+                    <h3 className={styles.title}>{status} <span>{tasks.length}</span></h3>
+                    <ButtonWrapper>
+                        <Plus className={styles.icon} />
+                    </ButtonWrapper>
+                </div>
+                <div className={styles.tasksBox}>
+                    {
+                        sortableTasks.map(task => (
+                            <TaskField key={task.id} task={task} />
+                        ))
+                    }
+                </div>
+            </article>
         </SortableContext>
     )
 }

@@ -1,6 +1,7 @@
 import { EnumKanbanStatus } from "@entities/Task/enums/EnumKanbanStatus"
 import { useDroppable } from "@dnd-kit/core"
 import { ReactNode } from "react"
+import styles from "./DropFiled.module.css"
 
 interface IDropFieldProps {
     status: EnumKanbanStatus,
@@ -14,7 +15,7 @@ const DropField = ({ status, children }: IDropFieldProps) => {
         id: status
     })
     return (
-        <div style={{ height: "100%" }} ref={setNodeRef}>
+        <div className={styles.drop} ref={setNodeRef}>
             { children }
         </div>
     )

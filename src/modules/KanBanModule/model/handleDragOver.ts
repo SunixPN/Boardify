@@ -12,14 +12,13 @@ export const handleDragOver = ({ kanbanStore }: IHandleDragOver) => {
         const activeType = active.data?.current?.type as EnumKanbanStatus
         const overType = over?.data?.current?.type as EnumKanbanStatus
 
-        console.log(over, active)
-
         if (typeof over?.id === "string") {
             kanbanStore.handleChangeTask([...kanbanStore.tasks.map(task => {
                 if (task.id === active.id) {
                     return {
                         ...task,
-                        status: over.id as EnumKanbanStatus
+                        status: over.id as EnumKanbanStatus,
+                        order: Infinity
                     }
                 }
 
@@ -32,12 +31,14 @@ export const handleDragOver = ({ kanbanStore }: IHandleDragOver) => {
                 if (task.id === active.id) {
                     return {
                         ...task,
-                        status: overType
+                        status: overType,
+                        order: Infinity
                     }
                 }
 
                 return task
             })])
+
         }
     }
 }

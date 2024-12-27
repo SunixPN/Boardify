@@ -16,6 +16,7 @@ const TaskField = ({ task }: ITaskFieldProps) => {
         setNodeRef,
         transform,
         transition,
+        isDragging
     } = useSortable({
         id: task.id,
         data: {
@@ -27,25 +28,36 @@ const TaskField = ({ task }: ITaskFieldProps) => {
         transform: CSS.Transform.toString(transform),
         transition,
     };
+
     return (
-        <div 
-            ref={setNodeRef} 
-            style={style}
-            className={styles.task}
-            { ...attributes }
-            { ...listeners }
-        >
-            <div className={styles.taskHead}>
-                <div className={styles.userBox}>
-                    <User className={styles.icon} />
-                    <span className={styles.text}>Username</span>
-                </div>
-                <ButtonWrapper>
-                    <Menu className={styles.icon} />
-                </ButtonWrapper>
+        <>
+            <div
+                ref={setNodeRef}
+                style={{...style, opacity: isDragging ? 0.5 : 1}}
+                className={styles.task}
+                {...attributes}
+                {...listeners}
+            >
+                {
+                    !isDragging
+                    &&
+                    <>
+                        <div className={styles.taskHead}>
+                            <div className={styles.userBox}>
+                                <User className={styles.icon} />
+                                <span className={styles.text}>Username</span>
+                            </div>
+                            <ButtonWrapper>
+                                <Menu className={styles.icon} />
+                            </ButtonWrapper>
+                        </div>
+                        <p className={styles.taskText}>{task.title}</p>
+                    </>
+                }
+
             </div>
-            <p className={styles.taskText}>{task.title}</p>
-        </div>
+        </>
+
     )
 }
 

@@ -4,11 +4,11 @@
     display: grid;
     grid-template-columns: repeat(3, 400px);
     gap: 20px;
-    /* align-items: flex-start; */
+    align-items: flex-start;
     padding-bottom: 15px;
 
     &::-webkit-scrollbar {
-        width: 10px;
+        width: 0;
     }
 
     &::-webkit-scrollbar-thumb {
@@ -19,5 +19,17 @@
     &::-webkit-scrollbar-track {
         background-color: var(--background);
         border-radius: 6px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .kanBanBoard {
+        grid-template-columns: repeat(2, 400px);
+    }
+}
+
+@media screen and (max-width: 651px) {
+    .kanBanBoard {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
