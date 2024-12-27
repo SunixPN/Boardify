@@ -9,7 +9,7 @@ const RootLayout = () => {
             <ToolBar />
             <div className={styles.rootSection}>
                 <Header />
-                <main className={styles.main}>
+                <main data-main className={styles.main}>
                     <Outlet />
                 </main>
             </div>

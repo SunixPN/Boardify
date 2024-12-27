@@ -1,4 +1,4 @@
-import KanBanModule from "@modules/KanBanModule/ui/KanBanModule"
+import KanBanModule from "@modules/KanBan/KanBanModule/ui/KanBanModule"
 import { useKanBanStore } from "../store/kanBanStore"
 
 const Home = () => {

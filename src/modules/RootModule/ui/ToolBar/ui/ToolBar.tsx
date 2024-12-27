@@ -9,6 +9,7 @@ import clsx from "clsx";
 import { Tooltip } from "@mui/material";
 import ButtonWrapper from "@shared/ui/ButtonWrapper/ButtonWrapper";
 import { useLocation } from "react-router-dom";
+import { mainSideEffect } from "../model/mainSideEffect.ts"
 
 const ToolBar = () => {
     const isExpanded = useToolBarStore(state => state.isExpanded)
@@ -24,39 +25,44 @@ const ToolBar = () => {
         onChangeCurrentElem(findElement)
     }, [pathname])
 
+    useEffect(mainSideEffect, [])
+
     return (
-        <aside className={clsx(styles.aside, !isExpanded && styles.asideClose)}>
-            <div className={clsx(styles.headerBox, !isExpanded && styles.closeBox)}>
-                <LayoutDashboard className={styles.icon} />
-                <AppTitle className={clsx(styles.title, !isExpanded && styles.hidden)}>Boardify</AppTitle>
-                <ButtonWrapper className={styles.wrapp} onClick={() => toggleExpanded()}>
-                    <ArrowLeftToLine style={{ transform: isExpanded ? "rotate(0)" : "rotate(180deg)" }} className={styles.exit} />
-                </ButtonWrapper>
-            </div>
-            <ul className={styles.items}>
-                {
-                    menuElements.map(elem => (
-                        <ToolBarElement
-                            key={elem.id}
-                            currentElement={currentElem}
-                            element={elem}
-                        />
-                    ))
-                }
-            </ul>
-            <Tooltip
-                disableHoverListener={isExpanded}
-                disableFocusListener={isExpanded}
-                disableTouchListener={isExpanded}
-                arrow
-                title={"Белов Александр"}
-                placement="right"
-            >
-                <div className={clsx(styles.boxUser, !isExpanded && styles.closeBoxUser)}>
-                    <div className={styles.colorBox}>Б</div>
-                    <p className={clsx(styles.text, !isExpanded && styles.hidden)}>Белов Александр</p>
+        <aside data-toolbar className={clsx(styles.aside, !isExpanded && styles.asideClose)}>
+            <div className={styles.assideContent}>
+                <div className={clsx(styles.headerBox, !isExpanded && styles.closeBox)}>
+                    <LayoutDashboard className={styles.icon} />
+                    <AppTitle className={clsx(styles.title, !isExpanded && styles.hidden)}>Boardify</AppTitle>
+                    <ButtonWrapper className={styles.wrapp} onClick={() => toggleExpanded()}>
+                        <ArrowLeftToLine style={{ transform: isExpanded ? "rotate(0)" : "rotate(180deg)" }} className={styles.exit} />
+                    </ButtonWrapper>
                 </div>
-            </Tooltip>
+                <ul className={styles.items}>
+                    {
+                        menuElements.map(elem => (
+                            <ToolBarElement
+                                key={elem.id}
+                                currentElement={currentElem}
+                                element={elem}
+                            />
+                        ))
+                    }
+                </ul>
+                <Tooltip
+                    disableHoverListener={isExpanded}
+                    disableFocusListener={isExpanded}
+                    disableTouchListener={isExpanded}
+                    arrow
+                    title={"Белов Александр"}
+                    placement="right"
+                >
+                    <div className={clsx(styles.boxUser, !isExpanded && styles.closeBoxUser)}>
+                        <div className={styles.colorBox}>Б</div>
+                        <p className={clsx(styles.text, !isExpanded && styles.hidden)}>Белов Александр</p>
+                    </div>
+                </Tooltip>
+            </div>
+
 
         </aside>
     )

@@ -4,5 +4,5 @@ export enum EnumKanbanStatus {
     IN_PAUSE = "На паузе",
     COMPLETE = "Выполнено",
     SUCCESS = "Завершено",
-    REJECT = "Отклонено"
+    REJECT = "Отклонено",
 }

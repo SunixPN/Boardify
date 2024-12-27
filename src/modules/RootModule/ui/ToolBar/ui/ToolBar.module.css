@@ -2,8 +2,6 @@
     background: linear-gradient(180deg, var(--blue-transparent), var(--background)) calc(334px * .33), transparent calc(334px *.88);
     padding: 20px 10px;
     border-right: 1px solid var(--border-color);
-    display: flex;
-    flex-direction: column;
     transform-origin: 0 0;
     transition: 0.5s ease;
     min-height: 600px;
@@ -12,6 +10,12 @@
     width: 300px;
     flex: 0 0 300px;
     white-space: nowrap;
+}
+
+.assideContent {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .asideClose {
@@ -134,6 +138,16 @@
         left: 0;
         z-index: 5;
         background: linear-gradient(180deg, #3b486e, var(--background)) calc(334px * .33), transparent calc(334px *.88);
+    }
+
+    .assideContent {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .boxUser {
+        margin-top: 30px;
     }
 
     .asideClose {
